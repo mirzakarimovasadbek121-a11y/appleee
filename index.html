@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APPLE PREMIUM STORE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style (29).css">
+<link rel="stylesheet" href="./responsive (4).css">
+</head>
+<body>
+<div id="loader"><span></span></div>
+<header class="nav" id="nav">
+  <a href="#home" class="logo" aria-label="Apple">&#63743;</a>
+  <nav class="links" id="links">
+    <a href="#home" data-i18n="home">Home</a>
+    <a href="#models" data-i18n="models">iPhone Models</a>
+    <a href="#about" data-i18n="about">About</a>
+    <a href="#accessories" data-i18n="accessories">Accessories</a>
+    <a href="#contact" data-i18n="contact">Contact</a>
+  </nav>
+  <div class="tools">
+    <button id="searchBtn" class="icon" aria-label="Search">🔍</button>
+    <select id="lang" aria-label="Language"><option value="uz">UZ</option><option value="en">EN</option><option value="ru">RU</option></select>
+    <button id="theme" class="icon" aria-label="Theme">🌙</button>
+    <button id="cartBtn" class="icon" aria-label="Cart">🛍️<b id="cartCount">0</b></button>
+    <button id="authBtn" class="btn small" data-i18n="login">Login</button>
+    <button id="regBtn" class="btn small" data-i18n="register">Register</button>
+    <button id="burger" class="icon hamb" aria-label="Menu">☰</button>
+  </div>
+</header>
+<section class="hero" id="home">
+  <div class="hero-text">
+    <p class="eyebrow">iPhone 17 Pro</p>
+    <h1 data-i18n="heroTitle">Discover The New iPhone</h1>
+    <p data-i18n="heroText">Titanium. Powerful. Beautiful.</p>
+    <div class="row"><a href="#models" class="btn" data-i18n="buy">Buy Now</a><a href="#latest" class="btn ghost" data-i18n="explore">Explore Models</a></div>
+  </div>
+  <div class="hero-phone" id="heroPhone"></div>
+</section>
+<section class="sec" id="iphone">
+  <div class="carousel" id="carousel">
+    <div class="track" id="track"></div>
+    <button class="arrow prev" id="prev" aria-label="Prev">‹</button>
+    <button class="arrow next" id="next" aria-label="Next">›</button>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+<section class="sec alt" id="latest"><h2 data-i18n="latest">Latest iPhone</h2><div class="grid" id="latestGrid"></div></section>
+<section class="sec" id="best"><h2 data-i18n="best">Best Sellers</h2><div class="grid" id="bestGrid"></div></section>
+<section class="sec alt" id="offers"><h2 data-i18n="offers">Special Offers</h2><h3 class="sub" data-i18n="offersP">Limited-time discounts</h3><div class="grid" id="offersGrid"></div></section>
+<section class="sec" id="models">
+  <h2 data-i18n="models">iPhone Models</h2><h3 class="sub" data-i18n="demoNote"></h3>
+  <div class="filters"><input id="search" type="search" placeholder="Search..." data-i18n-ph="search"><div id="cats"></div></div>
+  <div class="grid" id="products"></div>
+</section>
+<section class="sec alt" id="accessories"><h2 data-i18n="accessories">Accessories</h2><div class="grid" id="accGrid"></div></section>
+<section class="sec" id="about">
+  <h2 data-i18n="about">About Apple</h2><p class="center" data-i18n="aboutP"></p>
+  <h3 class="center" data-i18n="why">Why Choose Us</h3>
+  <div class="grid3"><div class="card">✅ <span data-i18n="why1"></span></div><div class="card">🚚 <span data-i18n="why2"></span></div><div class="card">🛡️ <span data-i18n="why3"></span></div></div>
+  <h3 class="center" style="margin-top:40px" data-i18n="reviews">Reviews</h3>
+  <div class="grid3"><div class="card"><span class="rate">★★★★★</span><p>"Perfect phone."</p><b>Aziz</b></div><div class="card"><span class="rate">★★★★★</span><p>"Exactly the color I wanted."</p><b>Madina</b></div><div class="card"><span class="rate">★★★★☆</span><p>"Great service."</p><b>Jasur</b></div></div>
+</section>
+<section class="sec alt" id="contact">
+  <h2 data-i18n="contact">Contact Us</h2>
+  <p class="center">📍 Tashkent &nbsp; 📞 +998 90 123 45 67 &nbsp; ✉️ info@iphonestore.uz</p>
+  <form id="msgForm" class="news" novalidate><input id="msgEmail" type="email" placeholder="Email"><button class="btn" data-i18n="send">Send</button></form>
+</section>
+<footer><p>© 2026 APPLE PREMIUM STORE</p><small data-i18n="footer">Demo store. Not affiliated with Apple Inc.</small></footer>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><h3 data-i18n="cart">Cart</h3><button class="icon" id="closeCart">✕</button></div>
+  <div id="cartItems"></div>
+  <div class="drawer-foot"><p><span data-i18n="total">Total</span>: <b id="cartTotal">$0</b></p><small id="cartUzs"></small><small data-i18n="demoNote"></small><button class="btn" id="checkout" data-i18n="checkout">Checkout</button></div>
+</aside>
+<div class="modal" id="detail"><div class="box wide" id="detailBox"></div></div>
+<div class="modal" id="modal">
+  <form class="box" id="authForm" novalidate>
+    <button type="button" class="icon close" id="closeModal">✕</button>
+    <h3 id="authTitle">Login</h3>
+    <input class="reg" id="fname" data-i18n-ph="fname">
+    <input class="reg" id="lname" data-i18n-ph="lname">
+    <input id="email" type="email" placeholder="Email">
+    <input class="reg" id="phone" data-i18n-ph="phone">
+    <div class="pass"><input id="pass" type="password" data-i18n-ph="pass"><button type="button" id="showPass" aria-label="Show">👁</button></div>
+    <input class="reg" id="pass2" type="password" data-i18n-ph="pass2">
+    <p id="authErr" class="err"></p>
+    <button class="btn" id="authSubmit">OK</button>
+    <a href="#" id="switchAuth">Register</a>
+  </form>
+</div>
+<button id="toTop" class="top" aria-label="Top">↑</button>
+<div id="toast" class="toast"></div>
+<script src="./script (4).js"></script>
+</body>
+</html>
